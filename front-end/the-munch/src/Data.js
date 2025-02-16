@@ -13,4 +13,18 @@ export const formData = [
     price:"",
     description:""
   },
+  {
+    id:3,
+    itemName:"",
+    category:"",
+    price:"",
+    description:""
+  },
+  {
+    id:4,
+    itemName:"",
+    category:"",
+    price:"",
+    description:""
+  },
 ]
