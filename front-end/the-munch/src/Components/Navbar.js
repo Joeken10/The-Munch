@@ -21,13 +21,13 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/home">Home</a> 
+                <a className="nav-link active" aria-current="page" href="/home">Restaurant</a> 
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/link">Link</a>
+                <a className="nav-link" href="/link">Menu</a>
               </li>
               <li className="nav-item">
-                <span className="nav-link disabled" aria-disabled="true">Disabled</span> 
+                <span className="nav-link disabled" aria-disabled="true">Category</span> 
               </li>
             </ul>
             <form className="d-flex" role="search">
