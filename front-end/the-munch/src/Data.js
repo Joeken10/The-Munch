@@ -1,7 +1,7 @@
 export const formData = [
   {
     id:1,
-    image:"",
+    image:"/Images/Classic American Burger with Fried Egg.jpeg",
     itemName:"Classic Beef Burger",
     category:"Burgers",
     price:700,
