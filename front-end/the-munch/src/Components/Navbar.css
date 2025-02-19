@@ -6,7 +6,7 @@
   --hover-gold: #1c3d0d;
 }
 
-/* Navbar Container */
+
 .container-fluid {
   background-color: var(--primary-color);
   width: 100%;
@@ -15,9 +15,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+
+  position: fixed;  
+  top: 0;
+  left: 0;
+  z-index: 1000;    
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-/* Navbar Brand */
+
+body {
+  padding-top: 80px; 
+}
+
+
 .navbar-brand {
   color: var(--gold-color);
   font-size: 1.8rem;
@@ -29,9 +40,9 @@
   color: var(--hover-gold);
 }
 
-/* Navbar Links */
+
 .navbar-nav {
-  margin-left: auto;  /* Moves the menu away from the brand */
+  margin-left: auto;
   display: flex;
   gap: 20px;
 }
@@ -48,13 +59,13 @@
   color: var(--gold-color);
 }
 
-/* Disabled Link */
+
 .navbar-nav .nav-item .nav-link.disabled {
   color: rgba(255, 255, 255, 0.5) !important;
   cursor: not-allowed;
 }
 
-/* Search Form */
+
 .d-flex input {
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -74,6 +85,7 @@
   outline: none;
   color: white;
 }
+
 
 .d-flex button {
   background-color: var(--gold-color);

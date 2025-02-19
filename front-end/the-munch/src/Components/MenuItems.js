@@ -27,26 +27,27 @@ function MenuItems({ menuProduct = [] }) {
                 className="btn btn-primary" 
                 onClick={() => handleDescriptionClick(item.id)}
               >
-                Description
+                {selectedItem === item.id ? "Hide Details" : "Description"}
               </button>
 
-             
+              {/* Show description and extras only when the item is selected */}
               {selectedItem === item.id && (
-                <p className="card-text">{item.description}</p>
-              )}
-
-              
-              {Array.isArray(item.extras) && item.extras.length > 0 ? (
-                <div className="extras">
-                  <h6>Extras:</h6>
-                  <ul>
-                    {item.extras.map((extra, index) => (
-                      <li key={index}>{extra}</li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <p>No extras available.</p> 
+                <>
+                  <p className="card-text">{item.description}</p>
+                  
+                  {Array.isArray(item.extras) && item.extras.length > 0 ? (
+                    <div className="extras">
+                      <h6>Extras:</h6>
+                      <ul>
+                        {item.extras.map((extra, index) => (
+                          <li key={index}>{extra}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <p>No extras available.</p> 
+                  )}
+                </>
               )}
             </div>
           </div>

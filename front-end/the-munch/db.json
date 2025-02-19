@@ -35,5 +35,59 @@
     "price":950,
     "description":"Buns, Marinated Chicken Breast 200g, Caramalized Onions , Tomatoes, Chadder cheese, Ketchup aioli, Garlic aioli, Coleslaw, Lettuce, Egg.",
     "extras":["Fries", "Garlic Bread", "Avocado"]
+  },
+  {
+    "id":5,
+    "image":"/Images/Classic American Burger with Fried Egg.jpeg",
+    "itemName":"Classic Beef Burger",
+    "category":"Burgers",
+    "price":700,
+    "description":"Buns, Beef Patty, Onions, Tomatoes, Chadder cheese, Ketchup, Mayonasse, Mustard aioli, Lettuce, Bacon, Egg.",
+    "extras":["Fries", "Onion Rings", "Extra Cheese"]
+  },
+  {
+    "id":6,
+    "image":"/Images/Double Bacon Cheeseburger – High Protein.jpeg",
+    "itemName":"Classic Double Beef Burger",
+    "category":"Burgers",
+    "price":800,
+    "description":"Buns, Aged Beef Patty(2), Onions, Tomatoes, Chadder cheese, Ketchup, Mayonasse, Mustard aioli, Lettuce, Bacon, Egg.",
+    "extras":["Fries", "Extra Bacon", "Coleslaw"]
+  },
+  {
+    "id":7,
+    "image":"/Images/Burger Taste.jpeg",
+    "itemName":"Chicken Burger",
+    "category":"Burgers",
+    "price":750,
+    "description":"Buns, Marinated Chicken Breast, Caramalized Onions, Tomatoes, Chadder cheese, Ketchup aioli, Garlic aioli, Mustard aioli, Lettuce, Egg.",
+    "extras":["Fries", "Grilled Mushrooms", "Pickles"]
+  },
+  {
+    "id":8,
+    "image":"/Images/Fried Chicken Burger.jpeg",
+    "itemName":"Double Chicken Burger",
+    "category":"Burgers",
+    "price":950,
+    "description":"Buns, Marinated Chicken Breast 200g, Caramalized Onions , Tomatoes, Chadder cheese, Ketchup aioli, Garlic aioli, Coleslaw, Lettuce, Egg.",
+    "extras":["Fries", "Garlic Bread", "Avocado"]
+  },
+  {
+    "id":9,
+    "image":"/Images/Classic American Burger with Fried Egg.jpeg",
+    "itemName":"Classic Beef Burger",
+    "category":"Burgers",
+    "price":700,
+    "description":"Buns, Beef Patty, Onions, Tomatoes, Chadder cheese, Ketchup, Mayonasse, Mustard aioli, Lettuce, Bacon, Egg.",
+    "extras":["Fries", "Onion Rings", "Extra Cheese"]
+  },
+  {
+    "id":10,
+    "image":"/Images/Double Bacon Cheeseburger – High Protein.jpeg",
+    "itemName":"Classic Double Beef Burger",
+    "category":"Burgers",
+    "price":800,
+    "description":"Buns, Aged Beef Patty(2), Onions, Tomatoes, Chadder cheese, Ketchup, Mayonasse, Mustard aioli, Lettuce, Bacon, Egg.",
+    "extras":["Fries", "Extra Bacon", "Coleslaw"]
   }
 ]}

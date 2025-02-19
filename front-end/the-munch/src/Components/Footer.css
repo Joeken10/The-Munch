@@ -1,6 +1,16 @@
-.footer{
-  background-color:rgb(47, 0, 255);
-  height: 60px;
+.footer {
+  background-color: var(--primary-color);  
+  color: var(--gold-color);  
+  text-align: center;
+  padding: 15px 0;
   width: 100%;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;  
+}
 
+.footer p {
+  margin: 0;
 }
