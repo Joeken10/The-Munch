@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Navbar.css";
-import User from "./User"; // Import User component
 
 function Navbar() {
   return (
@@ -35,10 +34,6 @@ function Navbar() {
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
-            {/* User Icon & Profile */}
-            <div className="user-cart-container">
-              <User /> {/* User component */}
-            </div>
           </div>
         </div>
       </nav>
