@@ -1,12 +1,19 @@
 :root {
   --primary-color: #1a1a2e;  
   --secondary-color: #16213e; 
-  --gold-color: #f7f7f7;  
+  --gold-color: #ffd700; /* More vibrant gold */
   --white-color: #f5f5f5;
-  --hover-gold: #1c3d0d;
+  --hover-gold: #e6b800; /* Softer transition gold */
 }
 
-/* Navbar Container */
+body {
+  padding-top: 80px; 
+  background-color: #0f0f1a; /* Slightly deeper background */
+  color: var(--white-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
 .container-fluid {
   background-color: var(--primary-color);
   width: 100%;
@@ -15,27 +22,26 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  position: fixed;
+  position: fixed;  
   top: 0;
   left: 0;
   z-index: 1000;    
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
 }
 
-body {
-  padding-top: 80px; 
-}
-
-/* Navbar Brand */
+/* Brand */
 .navbar-brand {
   color: var(--gold-color);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: bold;
-  transition: color 0.3s ease-in-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
 .navbar-brand:hover {
   color: var(--hover-gold);
+  transform: scale(1.05);
 }
 
 /* Navbar Links */
@@ -50,11 +56,29 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 10px 15px;
+  position: relative;
   transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: var(--gold-color);
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navbar-nav .nav-item .nav-link:hover {
   color: var(--gold-color);
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+  width: 80%;
 }
 
 .navbar-nav .nav-item .nav-link.disabled {
@@ -62,76 +86,85 @@ body {
   cursor: not-allowed;
 }
 
-/* Search Input */
+/* Search Bar */
 .d-flex input {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 8px 15px;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: all 0.3s ease-in-out;
 }
 
 .d-flex input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .d-flex input:focus {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.25);
   border-color: var(--gold-color);
   outline: none;
   color: white;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-/* Search Button */
+/* Button */
 .d-flex button {
   background-color: var(--gold-color);
   color: var(--primary-color);
   border: none;
   padding: 8px 15px;
   font-weight: bold;
+  border-radius: 8px;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .d-flex button:hover {
   background-color: var(--hover-gold);
   color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.cart-icon {
+  position: relative;
+  margin-left: 15px;
+  color: #333;
+  text-decoration: none;
 }
 
-/* USER & CART CONTAINER */
-.user-cart-container {
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 7px;
+}
+
+.search-form {
   display: flex;
   align-items: center;
-  gap: 20px; /* Space between User & Cart */
-  margin-left: 20px;
+  margin-right: 15px;
 }
 
-/* ADD TO CART STYLING */
-.cart-button {
-  background-color: var(--gold-color);
-  color: var(--primary-color);
+.search-form input {
+  width: 200px;
+  padding: 5px;
+}
+
+.search-form button {
   border: none;
-  padding: 10px 15px;
-  font-size: 1rem;
-  font-weight: bold;
+  background: #28a745;
+  color: white;
+  padding: 6px 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 
-.cart-button:hover {
-  background-color: var(--hover-gold);
-  color: black;
-}
-
-/* CART ICON */
-.cart-icon {
-  font-size: 1.5rem;
-  color: var(--gold-color);
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
-}
-
-.cart-icon:hover {
-  color: var(--hover-gold);
+.search-form button:hover {
+  background: #218838;
 }

@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; 
+import { FaShoppingCart, FaSearch } from 'react-icons/fa';
+import MenuForms from './MenuForms';
+import CartModal from './AddToCart';
 import "./Navbar.css";
 
 function Navbar() {
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log("Searching for:", searchQuery);
+  };
+
   return (
-    <div>
+    <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">The Munch</a> 
+          <Link className="navbar-brand" to="/">The Munch</Link>
+
           <button 
             className="navbar-toggler" 
             type="button" 
@@ -18,26 +36,48 @@ function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/home">Restaurant</a> 
+                <Link className="nav-link active" to="/home">Restaurant</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/link">Menu</a>
+                <Link className="nav-link" to="/menu">Menu</Link>
               </li>
               <li className="nav-item">
-                <span className="nav-link disabled" aria-disabled="true">Category</span> 
+                <Link className="nav-link" to="/description">Description</Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
+
+            {/* 🔍 Search Form */}
+            <form className="d-flex search-form" onSubmit={handleSearch}>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search menu..."
+                aria-label="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button className="btn btn-outline-success" type="submit">
+                <FaSearch />
+              </button>
             </form>
+
+            {/* 🛒 Cart Icon with Counter */}
+            <button className="cart-icon" onClick={() => setIsCartOpen(true)}>
+              <FaShoppingCart size={24} />
+              {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+            </button>
           </div>
         </div>
+
+        <MenuForms addToCart={addToCart} /> 
       </nav>
-    </div>
+
+      {isCartOpen && <CartModal cart={cart} onClose={() => setIsCartOpen(false)} />}
+    </>
   );
 }
 
