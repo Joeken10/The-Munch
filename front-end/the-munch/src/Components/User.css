@@ -1,0 +1,124 @@
+:root {
+  --primary-blue: #007bff;
+  --hover-blue: #0056b3;
+  --danger-red: #dc3545;
+  --hover-red: #b02a37;
+  --success-green: #28a745;
+  --text-dark: #333;
+  --border-gray: #ccc;
+  --background-white: #fff;
+  --modal-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* User Modal */
+.user-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--background-white);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px var(--modal-shadow);
+  padding: 25px;
+  width: 380px;
+  max-width: 90%;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Header */
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Inputs & Select */
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-blue);
+}
+
+/* Buttons */
+button {
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+  background: var(--hover-blue);
+  transform: scale(1.05);
+}
+
+/* Close Button */
+.close-button {
+  background: var(--danger-red);
+  margin-top: 12px;
+}
+
+.close-button:hover {
+  background: var(--hover-red);
+}
+
+/* Messages */
+.success-message {
+  color: var(--success-green);
+  font-weight: bold;
+}
+
+.error-message {
+  color: var(--danger-red);
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .user-modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input, select {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}

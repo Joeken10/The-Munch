@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import { ShoppingBag } from 'lucide-react';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaUser } from 'react-icons/fa';
 import MenuForms from './MenuForms';
 import CartModal from './AddToCart';
+import AuthModal from './User'; // Import AuthModal
 import "./Navbar.css";
 
 function Navbar() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false); // State for AuthModal
   const [searchQuery, setSearchQuery] = useState("");
 
   const addToCart = (item) => {
@@ -66,10 +68,15 @@ function Navbar() {
               </button>
             </form>
 
-            {/* 🛍️ Fancier Cart Icon with Counter */}
+            {/* 🛍️ Cart Icon with Counter */}
             <button className="cart-icon" onClick={() => setIsCartOpen(true)}>
-            <ShoppingBag size={26} />. {/* Bigger and more stylish */}
+              <ShoppingBag size={26} />
               {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+            </button>
+
+            {/* 👤 Auth Icon */}
+            <button className="auth-icon" onClick={() => setIsAuthOpen(true)}>
+              <FaUser size={24} />
             </button>
           </div>
         </div>
@@ -78,6 +85,7 @@ function Navbar() {
       </nav>
 
       {isCartOpen && <CartModal cart={cart} onClose={() => setIsCartOpen(false)} />}
+      {isAuthOpen && <AuthModal onClose={() => setIsAuthOpen(false)} />}
     </>
   );
 }
