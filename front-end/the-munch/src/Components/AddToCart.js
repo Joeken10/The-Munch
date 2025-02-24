@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./AddToCart.css"; // Import styles
 
-function AddToCart({ cart = [], onClose }) {
+function AddToCart({ cart = [], onClose, username = "Guest" }) {
   const navigate = useNavigate(); // ✅ Navigation function
 
   // Group items by name and selected extras
@@ -42,7 +42,7 @@ function AddToCart({ cart = [], onClose }) {
         <h2>Your Cart</h2>
 
         {cartItems.length === 0 ? (
-          <p>Your cart is empty</p>
+          <p>Hi, {username}, your cart is empty. Please add items!</p>
         ) : (
           <>
             <ul>
@@ -54,7 +54,7 @@ function AddToCart({ cart = [], onClose }) {
                     {item.selectedExtras?.length > 0 && (
                       <p className="extras">Extras: {item.selectedExtras.join(", ")}</p>
                     )}
-                    <p>ksh {item.price}.00 x {item.quantity} = ksh {(item.price + (item.selectedExtras?.length || 0) * 50) * item.quantity}.00</p>
+                    <p>ksh {item.price}.00 x {item.quantity} = ksh {(item.price + (item.selectedExtras?.length || 0) * 100) * item.quantity}.00</p>
                   </div>
                 </li>
               ))}

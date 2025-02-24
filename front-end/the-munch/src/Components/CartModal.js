@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartModal.css';
 
-const CartModal = ({ cartItems = [], onClose, username = "Guest", proceedToCheckout }) => {
+const CartModal = ({ cartItems = [], onClose, username = "Guest", proceedToCheckout, removeItem }) => {
   console.log(username); // Debugging line to check username value
 
   // Aggregate cart items and update quantities
@@ -30,6 +30,9 @@ const CartModal = ({ cartItems = [], onClose, username = "Guest", proceedToCheck
                 <p>{item.item_name}</p>
                 <p>Ksh {item.item_price.toFixed(2)}</p>
                 <p>Qty: {item.quantity}</p>
+                <button className="remove-button" onClick={() => removeItem(item.item_name)}>
+                  Remove
+                </button>
               </div>
             </div>
           ))

@@ -168,3 +168,31 @@ body {
 .search-form button:hover {
   background: #218838;
 }
+.cart-icon {
+  position: relative;
+  margin-left: 20px;
+  color: var(--gold-color);
+  font-size: 26px;
+  transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.cart-icon:hover {
+  color: var(--hover-gold);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* 🛒 Cart Count - Styled Like a Badge */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 4px 8px;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+

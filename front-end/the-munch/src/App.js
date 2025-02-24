@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Footer from './Components/Footer';
-import MenuForms from './Components/MenuForms';
 import Navbar from './Components/Navbar';
 
 function App() {
@@ -10,8 +9,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<MenuForms />} />
-          <Route path="/menu" element={<MenuForms />} />
+          <Route path="/" element={<h2>Home Page</h2>} />
+          <Route path="/menu" element={<h2>Menu Page</h2>} />
           <Route path="/description" element={<h2>Description Page</h2>} />
         </Routes>
         <Footer />

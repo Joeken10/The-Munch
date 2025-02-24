@@ -3,6 +3,7 @@ import "./MenuItemsModal.css";
 
 function MenuItemsModal({ item, onClose, onAddToCart }) {
   const [selectedExtras, setSelectedExtras] = useState([]);
+  const modalRef = React.useRef(null);
 
   // Close modal on "Escape" key press
   useEffect(() => {
@@ -12,6 +13,21 @@ function MenuItemsModal({ item, onClose, onAddToCart }) {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  // Focus modal when it opens
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.focus();
+    }
+  }, []);
 
   if (!item) return null;
 
@@ -35,8 +51,13 @@ function MenuItemsModal({ item, onClose, onAddToCart }) {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={onClose} aria-hidden="true">
+      <div
+        className="modal-content"
+        onClick={(e) => e.stopPropagation()}
+        ref={modalRef}
+        tabIndex="-1"
+      >
         <button className="close-btn" onClick={onClose} aria-label="Close Modal">
           &times;
         </button>

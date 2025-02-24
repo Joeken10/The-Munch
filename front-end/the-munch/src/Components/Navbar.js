@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
-import { FaShoppingCart, FaSearch } from 'react-icons/fa';
+import { ShoppingBag } from 'lucide-react';
+import { FaSearch } from 'react-icons/fa';
 import MenuForms from './MenuForms';
 import CartModal from './AddToCart';
 import "./Navbar.css";
@@ -65,9 +66,9 @@ function Navbar() {
               </button>
             </form>
 
-            {/* 🛒 Cart Icon with Counter */}
+            {/* 🛍️ Fancier Cart Icon with Counter */}
             <button className="cart-icon" onClick={() => setIsCartOpen(true)}>
-              <FaShoppingCart size={24} />
+            <ShoppingBag size={26} />. {/* Bigger and more stylish */}
               {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
             </button>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "./MenuItemsModal.js";
+import MenuItemsModal from "./MenuItemsModal.js";
 import "./MenuItems.css";
 
 function MenuItems({ menuProduct = [], addToCart }) {
@@ -23,12 +23,12 @@ function MenuItems({ menuProduct = [], addToCart }) {
               <h4 className="card-title">{item.itemName}</h4>
               <h5 className="card-title">ksh {item.price}.00</h5>
 
-              {/* Description Button to Open Modal */}
+              {/* Open Modal */}
               <button className="btn btn-primary" onClick={() => handleDescriptionClick(item)}>
                 Description
               </button>
 
-              {/* Add to Cart Button */}
+              {/* Add to Cart Button (without extras) */}
               <button className="btn btn-success mt-2" onClick={() => addToCart(item)}>
                 Add to Cart
               </button>
@@ -37,8 +37,10 @@ function MenuItems({ menuProduct = [], addToCart }) {
         </ul>
       ))}
 
-      {/* Modal Component */}
-      <Modal item={selectedItem} onClose={closeModal} />
+      {/* Modal with addToCart Function */}
+      {selectedItem && (
+        <MenuItemsModal item={selectedItem} onClose={closeModal} onAddToCart={addToCart} />
+      )}
     </div>
   );
 }
