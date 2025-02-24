@@ -21,7 +21,7 @@ function AddToCart({ cart = [], onClose, username = "Guest" }) {
 
   // Calculate total price including extras
   const totalPrice = cartItems.reduce(
-    (sum, item) => sum + (item.price + (item.selectedExtras?.length || 0) * 50) * item.quantity, 
+    (sum, item) => sum + (item.price + (item.selectedExtras?.length || 0) * 100) * item.quantity, 
     0
   );
 
